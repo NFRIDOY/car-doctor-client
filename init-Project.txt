@@ -1,0 +1,90 @@
+# Front End
+--------------------------------------------------------------
+npm create vite@latest name -- --template react
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+## All In One
+
+///// npm install -D react-router-dom localforage match-sorter sort-by tailwindcss postcss autoprefixer daisyui@latest
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+npx tailwindcss init -p
+--------------------------------------------------------------
+
+## Tailwind.config
+
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+
+plugins: [require("daisyui")],
+
+--------------------------------------------------------------
+
+## index.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+--------------------------------------------------------------
+
+## index.html
+
+data-theme="light"
+
+--------------------------------------------------------------
+
+# main.jsx Or Copy From Snippet
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+
+--------------------------------------------------------------
+
+# App.jsx Setup <Outlet> </Outlet> Below <Navbar> </Navbar>
+
+--------------------------------------------------------------
+==============================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==============================================================
+--------------------------------------------------------------
+# Back End
+--------------------------------------------------------------
+npm init -y
+--------------------------------------------------------------
+npm i express cors mongodb dotenv
+--------------------------------------------------------------
+COPY FROM SNIPPET
+--------------------------------------------------------------
+
+
+
+
+
+///// npm install -D react-router-dom localforage match-sorter sort-by tailwindcss postcss autoprefixer daisyui@latest
+
+Skip --------------------------------------------------------------
+npm install react-router-dom localforage match-sorter sort-by
+--------------------------------------------------------------
+npm install -D tailwindcss postcss autoprefixer daisyui@latest
+
