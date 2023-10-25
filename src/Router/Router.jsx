@@ -60,7 +60,7 @@ const router = createBrowserRouter([
                 // errorElement: <Error></Error>,
             },
 
-        ],
+        ]
 
     },
     {
@@ -98,7 +98,8 @@ const router = createBrowserRouter([
             }
 
         ]
-    }
+    },
+    
 
 ]);
 
