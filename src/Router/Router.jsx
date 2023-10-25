@@ -56,6 +56,41 @@ const router = createBrowserRouter([
         ],
 
     },
+    {
+        path: '/user',
+        element: <div>user section</div>,
+        // errorElement: <Error></Error>,
+        childrenL: [
+            {
+                path: "/", 
+                element: <Home></Home>,
+                loader: ()=> fetch('http://localhost:5000/services'),
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/about",
+                element: <div>About</div>,
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/services",
+                loader: ()=> fetch('http://localhost:5000/services'),
+                element: <Services></Services>,
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/about",
+                element: <div>About</div>,
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/services",
+                loader: ()=> fetch('http://localhost:5000/services'),
+                element: <Services></Services>,
+                // errorElement: <Error></Error>,
+            },
+        ]
+    }
 
 ]);
 
