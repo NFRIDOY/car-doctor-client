@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import detailsArrow from '../../assets/icons/arrow-16.png'
 
 
 export default function ServiceCard({ service }) {
@@ -15,7 +16,11 @@ export default function ServiceCard({ service }) {
                     <h3 className="text-xl text-red-500 font-bold">
                         Price: {service.price}
                     </h3>
-                    <Link to={`/services/${service._id}`}><button >D</button></Link>
+                    <Link to={`/services/${service._id}`} className="text-xl text-red-500 font-bold">
+                        <button > 
+                            <img className="w-6" src={detailsArrow} alt="" />
+                        </button>
+                    </Link>
                 </div>
 
 

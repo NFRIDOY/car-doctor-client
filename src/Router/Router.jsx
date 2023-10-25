@@ -5,6 +5,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from '../pages/home/Home'
 import Error from '../pages/Error/Error'
 import Services from "../components/Services/Services";
+import ServiceDetails from "../components/ServiceDetails/ServiceDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,8 +32,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/services/:id",
-                // loader: ({params}) => fetch(`/${params.id}`),
-                element: <div>services</div>,
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                element: <ServiceDetails></ServiceDetails>,
                 // errorElement: <Error></Error>,
             },
             {
