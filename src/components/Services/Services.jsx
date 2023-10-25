@@ -1,6 +1,7 @@
 
 
-export default function Services() {
+export default function Services({servicesData}) {
+    
     return (
         <div>Services</div>
     )
