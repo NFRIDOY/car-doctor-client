@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 
 export default function UserNavbar() {
@@ -10,9 +11,58 @@ export default function UserNavbar() {
                     {/* </a> */}
                 </div>
                 <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Link</a></li>
+                    <ul className="menu menu-horizontal px-1 space-x-3">
                         <li>
+                            <NavLink
+                                to="/user/order"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Order
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/user/orderReview"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Order Review
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/user/manageInventory"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Manage Inventory 
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/user/signup"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Sign Up
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/user"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Login
+                            </NavLink>
+                        </li>
+                        {/* <li>
                             <details>
                                 <summary>
                                     Parent
@@ -22,7 +72,7 @@ export default function UserNavbar() {
                                     <li><a>Link 2</a></li>
                                 </ul>
                             </details>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
