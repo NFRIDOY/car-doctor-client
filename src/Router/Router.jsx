@@ -4,6 +4,7 @@ import {
 import MainLayout from "../Layout/MainLayout";
 import Home from '../pages/home/Home'
 import Error from '../pages/Error/Error'
+import Services from "../components/Services/Services";
 
 const router = createBrowserRouter([
     {
@@ -12,9 +13,9 @@ const router = createBrowserRouter([
         // errorElement: <Error></Error>,
         children: [
             {
-                path: "/",
-                loader: () => fetch('/data.json'),
+                path: "/", 
                 element: <Home></Home>,
+                loader: ()=> fetch('http://localhost:5000/services'),
                 // errorElement: <Error></Error>,
             },
             {
@@ -24,7 +25,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/services",
-                element: <div>Services</div>,
+                loader: ()=> fetch('http://localhost:5000/services'),
+                element: <Services></Services>,
                 // errorElement: <Error></Error>,
             },
             {
