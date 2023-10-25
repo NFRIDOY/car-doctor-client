@@ -1,5 +1,4 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import { createContext } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 

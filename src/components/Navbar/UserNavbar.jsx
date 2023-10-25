@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 
 export default function UserNavbar() {
@@ -7,29 +7,31 @@ export default function UserNavbar() {
             <div className="navbar h-fit bg-base-100">
                 <div className="flex-1">
                     {/* <a className="btn btn-ghost normal-case text-xl"> */}
-                    <img src={logo} className="object-cover" alt="" />
+                    <Link to={'/'}>
+                        <img src={logo} className="object-cover" alt="" />
+                    </Link>
                     {/* </a> */}
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1 space-x-3">
                         <li>
                             <NavLink
-                                to="/user/order"
+                                to="/user/orders"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "active" : ""
                                 }
                             >
-                                Order
+                                Orders
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
-                                to="/user/orderReview"
+                                to="/user/ordersReview"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "active" : ""
                                 }
                             >
-                                Order Review
+                                Orders Review
                             </NavLink>
                         </li>
                         <li>
@@ -39,7 +41,7 @@ export default function UserNavbar() {
                                     isPending ? "pending" : isActive ? "active" : ""
                                 }
                             >
-                                Manage Inventory 
+                                Manage Inventory
                             </NavLink>
                         </li>
                         <li>

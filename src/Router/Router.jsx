@@ -8,7 +8,11 @@ import Home from '../pages/home/Home'
 import Error from '../pages/Error/Error'
 import Services from "../components/Services/Services";
 import ServiceDetails from "../components/ServiceDetails/ServiceDetails";
+import Orders from "../pages/Orders/Orders";
+import OrdersReview from "../pages/OrdersReview/OrdersReview"
+import ManageInventory from "../pages/ManageInventory/ManageInventory"
 import Login from "../pages/Login/Login";
+import Signup from "../pages/Signup/Signup";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <div>About</div>,
+                element: <Signup></Signup>,
                 // errorElement: <Error></Error>,
             },
             {
@@ -65,36 +69,33 @@ const router = createBrowserRouter([
         // errorElement: <Error></Error>,
         childrenL: [
             {
-                path: "/user/order",
-                loader: () => fetch('http://localhost:5000/services'),
-                element: <Services></Services>,
+                path: "/user/orders",
+                // loader: () => fetch('http://localhost:5000/services'),
+                element: <Orders></Orders>,
                 // errorElement: <Error></Error>,
             },
             {
-                path: "/user/orderReview",
-                loader: () => fetch('http://localhost:5000/services'),
-                element: <Services></Services>,
+                path: "/user/ordersReview",
+                // loader: () => fetch('http://localhost:5000/services'),
+                element: <OrdersReview></OrdersReview>
                 // errorElement: <Error></Error>,
             },
             {
                 path: "/user/manageInventory",
-                element: <div>Blog</div>,
+                element: <ManageInventory></ManageInventory>,
                 // errorElement: <Error></Error>,
             },
             {
-                path: "/signup",
-                element: <div>About</div>,
+                path: "/user/signup",
+                element: <Signup></Signup>,
                 // errorElement: <Error></Error>,
             },
             {
-                path: "/",
+                path: "/user",
                 element: <Login></Login>,
-                loader: () => fetch('http://localhost:5000/users'),
+                // loader: () => fetch('http://localhost:5000/users'),
                 // errorElement: <Error></Error>,
-            },
-
-
-
+            }
 
         ]
     }
