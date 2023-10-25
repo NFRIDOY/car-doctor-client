@@ -9,35 +9,50 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        errorElement: <Error></Error>,
+        // errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
                 loader: () => fetch('/data.json'),
-                element: <Home></Home>
+                element: <Home></Home>,
+                // errorElement: <Error></Error>,
             },
             {
-                path: "/donation",
-                element: <div>2</div>,
-                // errorElement: <DonationError></DonationError>,
+                path: "/about",
+                element: <div>About</div>,
+                // errorElement: <Error></Error>,
             },
             {
-                path: "/statistics",
-                element: <div>3</div>
+                path: "/services",
+                element: <div>Services</div>,
+                // errorElement: <Error></Error>,
             },
             {
-                path: "/donationDetails/:id",
-                loader: () => fetch("/donation.json"),
+                path: "/services/:id",
+                // loader: ({params}) => fetch(`/${params.id}`),
+                element: <div>services</div>,
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/blog",
+                element: <div>Blog</div>,
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/contact",
+                element: <div>Contact</div>,
+                // errorElement: <Error></Error>,
+            },
+            {
+                path: "/services/:id",
+                loader: () => fetch(""),
                 element: <div>4</div>,
+                // errorElement: <Error></Error>,
             },
 
         ],
 
     },
-    // {
-    //     path: "/error",
-    //     element: <Error></Error>
-    // },
 ]);
 
 export default router;
