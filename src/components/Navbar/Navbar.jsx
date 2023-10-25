@@ -123,7 +123,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <Link to={'/login'} className="btn bg-red-500 text-white hover:bg-black ">Book Appoientment</Link>
             </div>
         </div>
     )
