@@ -56,7 +56,7 @@ export default function UserNavbar() {
                         </li>
                         <li>
                             <NavLink
-                                to="/user"
+                                to="/user/login"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "active" : ""
                                 }

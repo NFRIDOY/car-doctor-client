@@ -158,7 +158,7 @@ export default function Navbar() {
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
-                <Link to={'/user'} className="btn bg-red-500 text-white hover:bg-black ">Book Appoientment</Link>
+                <Link to={'/user/login'} className="btn bg-red-500 text-white hover:bg-black ">Book Appoientment</Link>
             </div>
         </div>
     )
