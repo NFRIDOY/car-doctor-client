@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from "../../assets/logo.svg"
+import { useContext } from 'react'
+import { AuthContext } from '../../Provider/AuthProvider'
 
 export default function UserNavbar() {
+    const { user, setUser, createUser, logIn, googleLogin, logOut } = useContext(AuthContext)
     return (
         <div>
             <div className="navbar h-fit bg-base-300">

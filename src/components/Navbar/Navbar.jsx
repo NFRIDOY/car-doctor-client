@@ -1,8 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg"
+import { useContext } from 'react'
+import { AuthContext } from '../../Provider/AuthProvider'
 
 
 export default function Navbar() {
+    const { user, setUser, createUser, logIn, googleLogin, logOut } = useContext(AuthContext)
+
+    const handlelogOut = () => {
+        logOut().then(() => {
+            // Sign-out successful.
+            console.log("Sign-out successful.")
+        }).catch((error) => {
+            // An error happened.
+            console.log("Sign-out Not successful.")
+            console.log(error)
+        });
+    }
     return (
         <div className="navbar bg-base-300">
             <div className="navbar-start">
@@ -144,18 +158,18 @@ export default function Navbar() {
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img src={user?.photoURL} />
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
+                            <a className="justify-between" title={user?.email}>
+                                {user?.displayName}
+                                {/* <span className="badge">New</span> */}
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a onClick={handlelogOut}>Logout</a></li>
                     </ul>
                 </div>
                 <Link to={'/user/login'} className="btn bg-red-500 text-white hover:bg-black ">Book Appoientment</Link>
