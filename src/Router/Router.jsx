@@ -3,9 +3,9 @@ import {
 } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import UserLayout from "../Layout/UserLayout";
+import Error from '../pages/Error/Error'
 
 import Home from '../pages/home/Home'
-import Error from '../pages/Error/Error'
 import Services from "../components/Services/Services";
 import ServiceDetails from "../components/ServiceDetails/ServiceDetails";
 import Orders from "../pages/Orders/Orders";
