@@ -12,7 +12,7 @@ export default function MainLayout() {
       <Navbar></Navbar>
       <Outlet></Outlet>
       {
-        location.pathname== '/' || location.pathname== '/about' || location.pathname== '/services' || location.pathname== '/about' || location.pathname== '/blog' ? <Footer></Footer> : null
+        location.pathname== '/' || location.pathname== '/about' || location.pathname== '/services' || location.pathname== '/about' || location.pathname== '/blog'|| location.pathname== '/contact' ? <Footer></Footer> : null
       }
     </div>
   )
