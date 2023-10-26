@@ -77,7 +77,7 @@ const router = createBrowserRouter([
             {
                 path: "/user/ordersReview",
                 // loader: () => fetch('http://localhost:5000/services'),
-                element: <OrdersReview></OrdersReview>
+                element: <OrdersReview></OrdersReview>,
                 // errorElement: <Error></Error>,
             },
             {
@@ -99,8 +99,6 @@ const router = createBrowserRouter([
 
         ]
     },
-    
-
 ]);
 
 export default router;

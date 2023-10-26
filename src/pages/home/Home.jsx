@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Services from "../../components/Services/Services";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 
 
 export default function Home() {

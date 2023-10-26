@@ -3,9 +3,10 @@ import UserNavbar from "../components/Navbar/UserNavbar";
 
 export default function UserLayout() {
     return (
-        <div>
+        <>
             <UserNavbar></UserNavbar>
+            HI
             <Outlet></Outlet>
-        </div>
+        </>
     )
 }
