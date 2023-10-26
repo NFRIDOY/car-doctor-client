@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg"
 export default function UserNavbar() {
     return (
         <div>
-            <div className="navbar h-fit bg-base-100">
+            <div className="navbar h-fit bg-base-300">
                 <div className="flex-1">
                     {/* <a className="btn btn-ghost normal-case text-xl"> */}
                     <Link to={'/'}>
@@ -64,6 +64,7 @@ export default function UserNavbar() {
                                 Login
                             </NavLink>
                         </li>
+                        
                         {/* <li>
                             <details>
                                 <summary>
