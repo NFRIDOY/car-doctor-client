@@ -13,6 +13,7 @@ import OrdersReview from "../pages/OrdersReview/OrdersReview"
 import ManageInventory from "../pages/ManageInventory/ManageInventory"
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: "/services/:id",
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
-                element: <ServiceDetails></ServiceDetails>,
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 // errorElement: <Error></Error>,
             },
             {

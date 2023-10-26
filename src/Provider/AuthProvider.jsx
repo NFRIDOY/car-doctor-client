@@ -8,6 +8,7 @@ export default function AuthProvider({ children }) {
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const [user, setUser] = useState();
+    const [loading, setLoading] = useState();
 
     function createUser(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -24,6 +25,7 @@ export default function AuthProvider({ children }) {
     }
 
     useEffect(() => {
+        setLoading(true)
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
@@ -33,6 +35,7 @@ export default function AuthProvider({ children }) {
                 console.log(uid)
                 console.log(user)
                 setUser(user)
+                setLoading(false)
             } else {
                 // User is signed out
                 // ...

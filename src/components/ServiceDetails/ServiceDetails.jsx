@@ -6,7 +6,7 @@ export default function ServiceDetails() {
     const ServiceDetailsData = useLoaderData()
 
     const { _id, service_id, title, img, price, description, facility } = ServiceDetailsData
-    const { name, details } = facility
+    // const { name, details } = facility
     return (
         <div>
             <h1>ServiceDetails</h1>

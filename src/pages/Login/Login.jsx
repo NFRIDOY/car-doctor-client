@@ -1,8 +1,11 @@
 import { useContext } from 'react'
 import { AuthContext } from '../../Provider/AuthProvider'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
     const { user, setUser, createUser, logIn, googleLogin, logOut } = useContext(AuthContext)
+
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -19,12 +22,15 @@ export default function Login() {
                 const user = userCredential.user;
                 // ...
                 console.log("log In")
+                alert("Sign In")
+                navigate(location?.state ? location?.state : '/')
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // ..
                 console.log("log In Faild")
+                alert("Sign In Faild")
             });
 
     }
@@ -40,6 +46,8 @@ export default function Login() {
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
                 console.log(user)
+                alert("Google Sign In")
+                navigate(location?.state ? location?.state : '/')
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -50,6 +58,7 @@ export default function Login() {
                 const credential = GoogleAuthProvider.credentialFromError(error);
                 // ...
                 console.log(errorCode)
+                alert("Google Sign In Faild")
             });
     }
 
