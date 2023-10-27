@@ -20,11 +20,11 @@ export default function ServiceCard({ service }) {
                     <h3 className="text-xl text-red-500 font-bold">
                         Price: {service.price}
                     </h3>
-                    <Link to={`/services/${service._id}`} className="text-xl text-red-500 font-bold">
-                        <button > 
+                    <button >
+                        <Link to={`/services/${service._id}`} className="text-xl text-red-500 font-bold">
                             <img className="w-6" src={detailsArrow} alt="" onClick={handleDetailsbtn} />
-                        </button>
-                    </Link>
+                        </Link>
+                    </button>
                 </div>
 
 

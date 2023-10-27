@@ -8,7 +8,7 @@ export default function Services({ servicesData }) {
     const servicesLoaderData = useLoaderData()
     const [services, setServices] = useState(servicesData || servicesLoaderData )
     // const {title, img, price} = servicesData;
-    console.log(services)
+    // console.log(services)
     return (
         <div className="py-10">
             <h1 className="text-center text-6xl pb-12 font-bold">Our Service Area</h1>
