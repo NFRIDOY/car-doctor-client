@@ -26,7 +26,7 @@ export default function Footer({ }) {
                     {
                         services?.map(service => (
                             <div key={service._id} className="link link-hover">
-                                <Link   >
+                                <Link to={`/services/${service._id}`}  >
                                     {service.title}
                                 </Link>
                                 <br />

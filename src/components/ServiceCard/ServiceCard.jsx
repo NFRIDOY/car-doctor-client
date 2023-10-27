@@ -4,7 +4,7 @@ import detailsArrow from '../../assets/icons/arrow-16.png'
 
 export default function ServiceCard({ service }) {
     const handleDetailsbtn = () => {
-        alert("BTN")
+        // alert("BTN")
         console.log(service._id)
     }
     return (

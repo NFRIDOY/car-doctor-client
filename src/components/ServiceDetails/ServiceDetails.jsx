@@ -9,10 +9,9 @@ export default function ServiceDetails() {
     // const { name, details } = facility
     return (
         <div>
-            <h1>ServiceDetails</h1>
-            <div className="flex justify-evenly">
+            <div className="flex justify-evenly my-12">
                 <div>
-                    <div className="hero  ">
+                    <div className="hero">
                         <div className="hero-content text-center">
                             <div className="max-w-md flex flex-col text-left">
                                 <h1 className="text-5xl font-bold">{title}</h1>
