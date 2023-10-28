@@ -23,6 +23,9 @@ export default function Login() {
                 // ...
                 console.log("log In")
                 alert("Sign In")
+                // jwt
+                // fetch('')
+
                 navigate(location?.state ? location?.state : '/')
             })
             .catch((error) => {

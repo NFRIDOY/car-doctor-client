@@ -14,6 +14,8 @@ import ManageInventory from "../pages/ManageInventory/ManageInventory"
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import About from "../pages/About/About";
+import Cart from "../pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <Signup></Signup>,
+                element: <About></About>,
                 // errorElement: <Error></Error>,
             },
             {
@@ -55,9 +57,9 @@ const router = createBrowserRouter([
                 // errorElement: <Error></Error>,
             },
             {
-                path: "/services/:id",
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params}`),
-                element: <ServiceDetails></ServiceDetails>,
+                path: "/cart",
+                // loader: ({params}) => fetch(`http://localhost:5000/services/${params}`),
+                element: <Cart></Cart>,
                 // errorElement: <Error></Error>,
             },
 

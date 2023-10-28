@@ -7,6 +7,7 @@ export default function Services({ servicesData }) {
 
     const servicesLoaderData = useLoaderData()
     const [services, setServices] = useState(servicesData || servicesLoaderData )
+    
     // const {title, img, price} = servicesData;
     // console.log(services)
     return (
