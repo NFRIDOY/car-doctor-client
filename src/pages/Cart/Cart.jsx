@@ -13,14 +13,21 @@ export default function Cart() {
                 setCart(res.data)
                 console.log(res.data)
             })
-    }, [cart])
+    }, [])
+
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:5000/cart/${id}`)
+            .then(res => {
+                console.log(res.data)
+            })
+    }
 
     return (
         <div className="px-20 py-8">
             <h1 className="text-center text-5xl pb-10">Cart Items: {cart.length}</h1>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-10">
                 {
-                    cart.map(cartItem => <CartItem key={cartItem._id} cartItem={cartItem}></CartItem>)
+                    cart.map(cartItem => <CartItem key={cartItem._id} cartItem={cartItem} handleDelete={handleDelete}></CartItem>)
                 }
             </div>
 
