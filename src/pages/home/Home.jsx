@@ -5,12 +5,13 @@ import { useContext } from "react";
 
 
 export default function Home() {
-  const servicesData = useLoaderData()
-  console.log(servicesData)
+  // const servicesData = useLoaderData()
+  // console.log(servicesData)
   return (
     <div>
       <h1></h1>
-      <Services servicesData={servicesData}></Services>
+      <Services></Services>
+      {/* <Services servicesData={servicesData}></Services> */}
       {/* <Footer servicesData={servicesData}></Footer> */}
       
     </div>

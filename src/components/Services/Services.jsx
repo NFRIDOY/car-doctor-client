@@ -1,13 +1,25 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ServiceCard from "../ServiceCard/ServiceCard"
 import { useLoaderData, useRouteLoaderData } from "react-router-dom"
+import axios from "axios"
 
 
-export default function Services({ servicesData }) {
-
-    const servicesLoaderData = useLoaderData()
-    const [services, setServices] = useState(servicesData || servicesLoaderData )
+export default function Services() {
+    // export default function Services({ servicesData }) {
+    // const servicesLoaderData = useLoaderData()
+    // const [services, setServices] = useState(servicesData || servicesLoaderData)
     
+    const [services, setServices] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/services')
+            .then(res => {
+                setServices(res.data)
+                console.log(res.data)
+            })
+    }, [])
+
+
     // const {title, img, price} = servicesData;
     // console.log(services)
     return (
