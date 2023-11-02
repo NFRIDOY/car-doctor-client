@@ -1,11 +1,25 @@
 import { useContext } from 'react'
 import { AuthContext } from '../../Provider/AuthProvider'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Login() {
     const { user, setUser, createUser, logIn, googleLogin, logOut } = useContext(AuthContext)
 
     const navigate = useNavigate()
+
+    const URL = `http://localhost:5000/`
+
+    // get Access Token
+    const getToken = () => {
+        axios.post('http://localhost:5000/jwt', user, { withCredentials: true})
+        .then( res => {
+            console.log(res.data)
+            if(res.data?.success) {
+                console.log("Success ::> True")
+            }
+        })
+    }
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -25,6 +39,7 @@ export default function Login() {
                 alert("Sign In")
                 // jwt
                 // fetch('')
+                getToken()
 
                 navigate(location?.state ? location?.state : '/')
             })
@@ -50,6 +65,7 @@ export default function Login() {
                 // ...
                 console.log(user)
                 alert("Google Sign In")
+                getToken()
                 navigate(location?.state ? location?.state : '/')
             }).catch((error) => {
                 // Handle Errors here.

@@ -7,16 +7,19 @@ export const AuthContext = createContext(null);
 export default function AuthProvider({ children }) {
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
-    const [user, setUser] = useState();
-    const [loading, setLoading] = useState();
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     function createUser(email, password) {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     function logIn(email, password) {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     function googleLogin() {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
@@ -35,13 +38,12 @@ export default function AuthProvider({ children }) {
                 console.log(uid)
                 console.log(user)
                 setUser(user)
-                setLoading(false)
+                // setLoading(false)
             } else {
                 // User is signed out
                 // ...
             }
         })
-
 
         return () => {
             unsubscribe()
@@ -50,7 +52,7 @@ export default function AuthProvider({ children }) {
 
 
 
-    const info = { user, setUser, createUser, logIn, googleLogin, logOut }
+    const info = { user, setUser, createUser, logIn, googleLogin, logOut, loading }
     return (
         <AuthContext.Provider value={info}>
             {children}

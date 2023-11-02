@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             {
                 path: "/cart",
                 // loader: ({params}) => fetch(`http://localhost:5000/services/${params}`),
-                element: <Cart></Cart>,
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
                 // errorElement: <Error></Error>,
             },
 

@@ -12,7 +12,7 @@ export default function ServiceDetails() {
     const bookedData ={ product_id:_id, service_id, title, img, price, description, facility }
     const handleBookNow = () =>{
         // alert(_id)
-        alert(title)
+        // alert(title)
         console.log(bookedData)
 
         // fetch("http://localhost:5000/cart", {

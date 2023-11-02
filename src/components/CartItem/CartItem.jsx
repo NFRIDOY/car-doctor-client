@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 export default function CartItem({ cartItem, handleDelete }) {
@@ -10,9 +11,9 @@ export default function CartItem({ cartItem, handleDelete }) {
                 <img className="w-40 h-full rounded-l-lg" src={img} alt="" />
             </div>
             <div className="flex justify-around items-center w-full">
-                <h1 className="text-3xl flex-grow">
+                <Link to={`/services/${_id}`} className="text-3xl flex-grow">
                     {title}
-                </h1>
+                </Link>
                 <h2 className="text-gray-700 font-bold text-2xl mr-5">
                     ৳ {price}
                 </h2>
