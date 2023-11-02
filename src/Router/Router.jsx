@@ -62,6 +62,12 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>,
                 // errorElement: <Error></Error>,
             },
+            {
+                path: "/login",
+                element: <Login></Login>,
+                // loader: () => fetch('http://localhost:5000/users'),
+                // errorElement: <Error></Error>,
+            }
 
         ]
 
@@ -93,12 +99,12 @@ const router = createBrowserRouter([
                 element: <Signup></Signup>,
                 // errorElement: <Error></Error>,
             },
-            {
-                path: "/user/login",
-                element: <Login></Login>,
-                // loader: () => fetch('http://localhost:5000/users'),
-                // errorElement: <Error></Error>,
-            }
+            // {
+            //     path: "/user/login",
+            //     element: <Login></Login>,
+            //     // loader: () => fetch('http://localhost:5000/users'),
+            //     // errorElement: <Error></Error>,
+            // }
 
         ]
     },

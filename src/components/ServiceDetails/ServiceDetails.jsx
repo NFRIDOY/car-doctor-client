@@ -1,11 +1,16 @@
 import { data } from "autoprefixer"
 import axios from "axios"
+import { useEffect } from "react"
 import { useLoaderData } from "react-router-dom"
 
 
 export default function ServiceDetails() {
 
     const ServiceDetailsData = useLoaderData()
+
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5000/services/${params.id}`)
+    // },[])
 
     const { _id, service_id, title, img, price, description, facility } = ServiceDetailsData
     // const { name, details } = facility

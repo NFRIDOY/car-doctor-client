@@ -38,7 +38,7 @@ export default function AuthProvider({ children }) {
                 console.log(uid)
                 console.log(user)
                 setUser(user)
-                // setLoading(false)
+                setLoading(false)
             } else {
                 // User is signed out
                 // ...

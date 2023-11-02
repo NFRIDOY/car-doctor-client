@@ -2,17 +2,19 @@ import { useEffect, useState } from "react"
 import ServiceCard from "../ServiceCard/ServiceCard"
 import { useLoaderData, useRouteLoaderData } from "react-router-dom"
 import axios from "axios"
+import useAuth from "../../hooks/useAuth"
 
 
 export default function Services() {
     // export default function Services({ servicesData }) {
     // const servicesLoaderData = useLoaderData()
     // const [services, setServices] = useState(servicesData || servicesLoaderData)
-    
+    // const
     const [services, setServices] = useState([])
+    const {user} = useAuth();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/services')
+        axios.get('http://localhost:5000/services', user, {withCredentials: true})
             .then(res => {
                 setServices(res.data)
                 console.log(res.data)

@@ -12,13 +12,15 @@ export default function Login() {
 
     // get Access Token
     const getToken = () => {
-        axios.post('http://localhost:5000/jwt', user, { withCredentials: true})
-        .then( res => {
-            console.log(res.data)
-            if(res.data?.success) {
-                console.log("Success ::> True")
-            }
-        })
+
+        axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+            .then(res => {
+                console.log(res.data)
+                if (res.data?.message) {
+                    console.log("Success ::> True")
+                    alert("Success ::> True")
+                }
+            })
     }
 
     const handleLogin = (e) => {
@@ -57,8 +59,8 @@ export default function Login() {
         googleLogin()
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
+                // const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
                 // IdP data available using getAdditionalUserInfo(result)
@@ -70,11 +72,11 @@ export default function Login() {
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
-                const errorMessage = error.message;
+                // const errorMessage = error.message;
                 // The email of the user's account used.
-                const email = error.customData.email;
+                // const email = error.customData.email;
                 // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
+                // const credential = GoogleAuthProvider.credentialFromError(error);
                 // ...
                 console.log(errorCode)
                 alert("Google Sign In Faild")

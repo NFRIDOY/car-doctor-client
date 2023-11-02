@@ -137,6 +137,16 @@ export default function Navbar() {
                             Contact
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink
+                            to="/login"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                            }
+                        >
+                            Login
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
 
