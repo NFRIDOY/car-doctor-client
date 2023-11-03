@@ -3,6 +3,8 @@ import ServiceCard from "../ServiceCard/ServiceCard"
 import { useLoaderData, useRouteLoaderData } from "react-router-dom"
 import axios from "axios"
 import useAuth from "../../hooks/useAuth"
+import { QueryCache, QueryClient, useQuery } from "@tanstack/react-query"
+import useAxios from "../../hooks/useAxios"
 
 
 export default function Services() {
@@ -12,14 +14,25 @@ export default function Services() {
     // const
     const [services, setServices] = useState([])
     const {user} = useAuth();
+    const axios = useAxios();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/services', user, {withCredentials: true})
+        // axios.get('http://localhost:5000/services', user, {withCredentials: true})
+        axios.get('/services', user)
             .then(res => {
                 setServices(res.data)
                 console.log(res.data)
             })
     }, [])
+
+    
+
+    const { isPending, error, data, isLoading } = useQuery({
+        queryKey: ['services'],
+        queryFn: () => {
+            
+        }
+    })
 
 
     // const {title, img, price} = servicesData;

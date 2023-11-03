@@ -17,7 +17,7 @@ export default function ServiceDetails() {
 
     const { _id, service_id, title, img, price, description, facility } = ServiceDetailsData
     // const { name, details } = facility
-    const userEmail = user?.email;
+    // const userEmail = user?.email;
     const bookedData ={  user, product_id:_id, service_id, title, img, price, description, facility }
     const handleBookNow = () =>{
         // alert(_id)
@@ -49,8 +49,8 @@ export default function ServiceDetails() {
     }
     return (
         <div>
-            <div className="flex justify-evenly my-12">
-                <div>
+            <div className="flex justify-evenly my-12 mx-12">
+                <div className="w-1/2">
                     <div className="hero">
                         <div className="hero-content text-center">
                             <div className="max-w-md flex flex-col text-left">
@@ -66,8 +66,8 @@ export default function ServiceDetails() {
                         </div>
                     </div>
                 </div>
-                <div className="">
-                    <img className=" rounded-lg shadow-2xl" src={img} alt="" />
+                <div className="w-1/2">
+                    <img className="object-fill h-full rounded-lg shadow-2xl" src={img} alt="" />
                 </div>
             </div>
             {/* <div className="hero min-h-screen bg-base-200">
