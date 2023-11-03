@@ -2,11 +2,14 @@ import { data } from "autoprefixer"
 import axios from "axios"
 import { useEffect } from "react"
 import { useLoaderData } from "react-router-dom"
+import useAuth from "../../hooks/useAuth"
 
 
 export default function ServiceDetails() {
 
     const ServiceDetailsData = useLoaderData()
+
+    const {user} = useAuth();
 
     // useEffect(() => {
     //     axios.get(`http://localhost:5000/services/${params.id}`)
@@ -14,12 +17,13 @@ export default function ServiceDetails() {
 
     const { _id, service_id, title, img, price, description, facility } = ServiceDetailsData
     // const { name, details } = facility
-    const bookedData ={ product_id:_id, service_id, title, img, price, description, facility }
+    const userEmail = user?.email;
+    const bookedData ={  user, product_id:_id, service_id, title, img, price, description, facility }
     const handleBookNow = () =>{
         // alert(_id)
         // alert(title)
         console.log(bookedData)
-
+        
         // fetch("http://localhost:5000/cart", {
         //     method: "POST",
         //     headers: {
