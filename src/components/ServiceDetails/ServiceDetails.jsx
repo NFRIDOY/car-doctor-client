@@ -1,19 +1,27 @@
 import { data } from "autoprefixer"
 import axios from "axios"
-import { useEffect } from "react"
-import { useLoaderData } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useLoaderData, useParams } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
 
 
 export default function ServiceDetails() {
 
-    const ServiceDetailsData = useLoaderData()
+    // const ServiceDetailsData = useLoaderData()
+
+    const [ServiceDetailsData, setServiceDetailsData] = useState({})
 
     const {user} = useAuth();
 
-    // useEffect(() => {
-    //     axios.get(`http://localhost:5000/services/${params.id}`)
-    // },[])
+    const { id } = useParams();
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/services/${id}`)
+        .then(res => {
+            console.log(res.data)
+            setServiceDetailsData(res.data)
+        })
+    },[])
 
     const { _id, service_id, title, img, price, description, facility } = ServiceDetailsData
     // const { name, details } = facility
